@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -23,6 +24,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $company = Auth::user()->company;
+
+        return view('dashboard', [
+            'company' => $company->name
+        ]);
     }
 }
