@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Philanthropist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,7 +28,7 @@ class DashboardController extends Controller
         $company = Auth::user()->company;
 
         return view('dashboard', [
-            'company' => $company->name
+            'company' => $company,
         ]);
     }
 }

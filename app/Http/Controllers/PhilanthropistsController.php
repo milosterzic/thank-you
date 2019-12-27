@@ -43,7 +43,7 @@ class PhilanthropistsController extends Controller
         $philantropist = $this->philanthropistsManager->store($request->all());
 
         return view('dashboard', [
-            'company' => $philantropist->company->name
+            'company' => $philantropist->company,
         ]);
     }
 
