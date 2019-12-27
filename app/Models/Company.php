@@ -17,4 +17,14 @@ class Company extends Model
         return $this->hasMany(User::class);
     }
 
+    /**
+     * Get philanthropists of company.
+     *
+     * @return HasMany
+     */
+    public function philanthropists() : HasMany
+    {
+        return $this->hasMany(User::class);
+    }
+
 }
