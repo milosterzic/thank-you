@@ -21,6 +21,7 @@ class PhilanthropistsManager
         $philantropist->last_name = $data['last_name'];
         $philantropist->email = $data['email'];
         $philantropist->phone_number = $data['phone_number'];
+        $philantropist->is_active = true;
         $philantropist->company_id = Auth::user()->company_id;
 
         $philantropist->save();
