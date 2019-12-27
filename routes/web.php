@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PhilanthropistsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +22,7 @@ Auth::routes();
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('/dashboard/philanthropists/create', 'PhilanthropistsController@create')->name('philanthropists.create');
+
+Route::resource('philanthropists', PhilanthropistsController::class)->except([
+    'index', 'show',
+]);
