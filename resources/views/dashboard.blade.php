@@ -5,7 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard of {{ $company }}</div>
+                <div class="card-header">
+                    Dashboard of {{ $company }}
+
+                    <a class="btn btn-primary float-right" href="{{ route('philanthropists.create') }}">
+                        {{ __('Add Philanthropists') }}
+                    </a>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
