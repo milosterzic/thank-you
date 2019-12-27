@@ -5,7 +5,7 @@ namespace App\Managers;
 use App\Models\Philanthropist;
 use Illuminate\Support\Facades\Auth;
 
-class PhilantropistsManager
+class PhilanthropistsManager
 {
     /*
      * Create and store philantropist.
