@@ -39,7 +39,7 @@
                                         <a href="{{ route('philanthropists.edit', [$philanthropist->id]) }}" class="dashboard-icon float-right">
                                             <i class="fa fa-pencil float-right" aria-hidden="true"></i>
                                         </a>
-                                        @if($philanthropist->hasNotThakedDonations())
+                                        @if ($philanthropist->hasNotThakedDonations())
                                             <a class="dashboard-icon float-right">
                                                 <i class="fa fa-heart float-right" aria-hidden="true" data-id="{{ $philanthropist->id }}"></i>
                                             </a>

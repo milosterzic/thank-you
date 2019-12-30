@@ -1,3 +1,8 @@
+body {
+    background-image: radial-gradient(#efefef 15%, transparent 15%), radial-gradient(#eee 15%, transparent 15%);
+    background-position: 0 0, 10px 10px;
+    background-size: 20px 20px;
+}
 .form-group.required .col-form-label:after {
     content:" *";
     color:red;
@@ -8,4 +13,22 @@
 }
 .dashboard-icon i.fa-heart {
     color: mediumvioletred;
+}
+.btn {
+    border-width: 2px;
+}
+.card-header {
+    background: rgb(240, 18, 130);
+    background: linear-gradient(90deg, rgba(240, 18, 130, 1) 0%, rgba(255, 0, 248, 1) 100%);
+    color: white;
+}
+.card-header .btn-primary {
+    color: rgb(240, 18, 130);
+    background: white;
+    border-color: white;
+}
+.card-header .btn-primary:hover {
+    color: white;
+    background: rgba(240, 18, 130, 0);
+    border-color: white;
 }
