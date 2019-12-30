@@ -36,19 +36,28 @@
                                     <td>{{ $philanthropist->first_name . ' ' . $philanthropist->last_name }}</td>
                                     <td>{{ $philanthropist->email }}</td>
                                     <td>
-                                        <a href="{{ route('philanthropists.edit', [$philanthropist->id]) }}">
+                                        <a href="{{ route('philanthropists.edit', [$philanthropist->id]) }}" class="dashboard-icon float-right">
                                             <i class="fa fa-pencil float-right" aria-hidden="true"></i>
                                         </a>
+                                        @if($philanthropist->hasNotThakedDonations())
+                                            <a class="dashboard-icon float-right">
+                                                <i class="fa fa-heart float-right" aria-hidden="true" data-id="{{ $philanthropist->id }}"></i>
+                                            </a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
 
-
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/dashboard.js') }}" defer></script>
 @endsection
