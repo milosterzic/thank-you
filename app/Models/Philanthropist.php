@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Philanthropist extends Model
 {
@@ -16,6 +17,16 @@ class Philanthropist extends Model
     public function company() : BelongsTo
     {
         return $this->belongsTo(Company::class);
+    }
+
+    /**
+     * Get donations of philanthropist.
+     *
+     * @return HasMany
+     */
+    public function donations() : HasMany
+    {
+        return $this->hasMany(Donation::class);
     }
 
     /**

@@ -29,6 +29,16 @@ class Company extends Model
     }
 
     /**
+     * Get donations of company.
+     *
+     * @return HasMany
+     */
+    public function donations() : HasMany
+    {
+        return $this->hasMany(Donation::class);
+    }
+
+    /**
      * Get active philanthropists of company.
      *
      * @return Collection
