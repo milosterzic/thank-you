@@ -15,17 +15,38 @@ class PhilanthropistsManager
      */
     public function store(array $data)
     {
-        $philantropist = new Philanthropist();
+        $philanthropist = new Philanthropist();
 
-        $philantropist->first_name = $data['first_name'];
-        $philantropist->last_name = $data['last_name'];
-        $philantropist->email = $data['email'];
-        $philantropist->phone_number = $data['phone_number'];
-        $philantropist->is_active = true;
-        $philantropist->company_id = Auth::user()->company_id;
+        $philanthropist->first_name = $data['first_name'];
+        $philanthropist->last_name = $data['last_name'];
+        $philanthropist->email = $data['email'];
+        $philanthropist->phone_number = $data['phone_number'];
+        $philanthropist->is_active = true;
+        $philanthropist->company_id = Auth::user()->company_id;
 
-        $philantropist->save();
+        $philanthropist->save();
 
-        return $philantropist;
+        return $philanthropist;
+    }
+
+    /*
+     * Update philantropist.
+     *
+     * @param Philanthropist $philanthropist
+     * @param array $data
+     * @return Philanthropist
+     */
+    public function update(Philanthropist $philanthropist, array $data)
+    {
+        $philanthropist->first_name = $data['first_name'];
+        $philanthropist->last_name = $data['last_name'];
+        $philanthropist->email = $data['email'];
+        $philanthropist->phone_number = $data['phone_number'];
+        $philanthropist->is_active = true;
+        $philanthropist->company_id = Auth::user()->company_id;
+
+        $philanthropist->save();
+
+        return $philanthropist;
     }
 }

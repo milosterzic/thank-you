@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePhilanthropist;
+use App\Http\Requests\UpdatePhilanthropist;
 use App\Managers\PhilanthropistsManager;
 use App\Models\Philanthropist;
 use Illuminate\Http\Request;
@@ -55,7 +56,9 @@ class PhilanthropistsController extends Controller
      */
     public function edit(Philanthropist $philanthropist)
     {
-        //
+        return view('philanthropists.edit', [
+            'philanthropist' => $philanthropist,
+        ]);
     }
 
     /**
@@ -65,9 +68,13 @@ class PhilanthropistsController extends Controller
      * @param  Philanthropist  $philanthropist
      * @return Response
      */
-    public function update(Request $request, Philanthropist $philanthropist)
+    public function update(UpdatePhilanthropist $request, Philanthropist $philanthropist)
     {
-        //
+        $philantropist = $this->philanthropistsManager->update($philanthropist, $request->all());
+
+        return view('dashboard', [
+            'company' => $philantropist->company,
+        ]);
     }
 
     /**
