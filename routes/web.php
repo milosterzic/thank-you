@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard', DashboardController::class . '@index')->name('dashboard');
 
-Route::get('/dashboard/philanthropists/create', 'PhilanthropistsController@create')->name('philanthropists.create');
+Route::resource('dashboard/philanthropists', PhilanthropistsController::class)->except([
+    'index', 'show',
+]);

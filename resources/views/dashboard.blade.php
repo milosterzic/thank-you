@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    Dashboard of {{ $company }}
+                    {{ $company->name }}
 
                     <a class="btn btn-primary float-right" href="{{ route('philanthropists.create') }}">
                         {{ __('Add Philanthropists') }}
@@ -20,7 +20,32 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($company->getActivePhilanthropists() as $philanthropist)
+                                <tr>
+                                    <th scope="row">{{ $philanthropist->id }}</th>
+                                    <td>{{ $philanthropist->first_name . ' ' . $philanthropist->last_name }}</td>
+                                    <td>{{ $philanthropist->email }}</td>
+                                    <td>
+                                        <a href="{{ route('philanthropists.edit', [$philanthropist->id]) }}">
+                                            <i class="fa fa-pencil float-right" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+
+
                 </div>
             </div>
         </div>
