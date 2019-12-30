@@ -2,3 +2,10 @@
     content:" *";
     color:red;
 }
+.dashboard-icon {
+    margin-left: 10px;
+    cursor: pointer;
+}
+.dashboard-icon i.fa-heart {
+    color: mediumvioletred;
+}
