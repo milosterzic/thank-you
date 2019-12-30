@@ -26,6 +26,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
+                            <th scope="col"></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -34,6 +35,11 @@
                                     <th scope="row">{{ $philanthropist->id }}</th>
                                     <td>{{ $philanthropist->first_name . ' ' . $philanthropist->last_name }}</td>
                                     <td>{{ $philanthropist->email }}</td>
+                                    <td>
+                                        <a href="{{ route('philanthropists.edit', [$philanthropist->id]) }}">
+                                            <i class="fa fa-pencil float-right" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
