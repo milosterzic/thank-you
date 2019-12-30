@@ -50,4 +50,24 @@ class Philanthropist extends Model
     {
         return $query->where('is_active', '0');
     }
+
+    /**
+     * Check not thanked donations.
+     *
+     * @return bool
+     */
+    public function hasNotThakedDonations() : bool
+    {
+        return $this->donations()->notThanked()->exists();
+    }
+
+    /**
+     * Check not thanked donations.
+     *
+     * @return Donation
+     */
+    public function getFirstNotThakedDonation() : Donation
+    {
+        return $this->donations()->notThanked()->orderBy('created_at', 'asc')->first();
+    }
 }
