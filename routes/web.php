@@ -22,3 +22,5 @@ Route::get('/dashboard', DashboardController::class . '@index')->name('dashboard
 Route::resource('dashboard/philanthropists', PhilanthropistsController::class)->except([
     'index', 'show',
 ]);
+
+Route::post('/donations/notify', DonationsController::class . '@notify')->name('donations.notify');
