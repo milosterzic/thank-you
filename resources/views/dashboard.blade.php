@@ -30,6 +30,8 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @csrf
+
                             @foreach($company->getActivePhilanthropists() as $philanthropist)
                                 <tr>
                                     <th scope="row">{{ $philanthropist->id }}</th>
