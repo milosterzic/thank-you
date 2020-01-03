@@ -44,4 +44,8 @@ return [
         ],
     ],
 
+    'nexmo' => [
+        'sms_from' => 'Thank You',
+    ],
+
 ];
