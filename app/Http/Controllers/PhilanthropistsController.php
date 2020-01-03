@@ -43,9 +43,7 @@ class PhilanthropistsController extends Controller
     {
         $philantropist = $this->philanthropistsManager->store($request->all());
 
-        return view('dashboard', [
-            'company' => $philantropist->company,
-        ]);
+        return redirect(route('dashboard'));
     }
 
     /**
@@ -72,9 +70,7 @@ class PhilanthropistsController extends Controller
     {
         $philantropist = $this->philanthropistsManager->update($philanthropist, $request->all());
 
-        return view('dashboard', [
-            'company' => $philantropist->company,
-        ]);
+        return redirect(route('dashboard'));
     }
 
     /**
