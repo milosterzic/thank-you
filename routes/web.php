@@ -23,4 +23,4 @@ Route::resource('dashboard/philanthropists', PhilanthropistsController::class)->
     'index', 'show',
 ]);
 
-Route::post('/donations/notify', DonationsController::class . '@notify')->name('donations.notify');
+Route::post('dashboard/donations/notify', DonationsController::class . '@notify')->name('donations.notify');
