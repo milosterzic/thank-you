@@ -2,7 +2,7 @@ $('.dashboard-icon i.fa-heart').on('click', function () {
    philathropistsId = ($(this).attr('data-id'));
    csrfToken = $('input[name="_token"]').val();
 
-   $.post( "donations/notify",
+   $.post( "dashboard/donations/notify",
       {
          philanthropist_id : philathropistsId,
          _token : csrfToken
