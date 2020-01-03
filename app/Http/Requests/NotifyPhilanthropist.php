@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorePhilanthropist extends FormRequest
+class NotifyPhilanthropist extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,14 +24,10 @@ class StorePhilanthropist extends FormRequest
     public function rules()
     {
         return [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => [
+            'philanthropist_id' => [
                 'required',
-                'email',
-                'unique:philanthropists',
-            ],
-            'phone_number' => 'required',
+                'exists:philanthropists,id',
+            ]
         ];
     }
 }
