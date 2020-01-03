@@ -19,7 +19,7 @@ body {
 }
 .card-header {
     background: rgb(240, 18, 130);
-    background: linear-gradient(90deg, rgba(240, 18, 130, 1) 0%, rgba(255, 0, 248, 1) 100%);
+    background: linear-gradient(90deg, rgba(240, 18, 130, 1) 0%, rgba(215, 0, 209, 1) 100%);
     color: white;
 }
 .card-header .btn-primary {
