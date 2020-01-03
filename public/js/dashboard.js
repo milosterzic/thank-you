@@ -4,7 +4,7 @@ $('.dashboard-icon i.fa-heart').on('click', function () {
 
    $.post( "donations/notify",
       {
-         philathropists_id : philathropistsId,
+         philanthropist_id : philathropistsId,
          _token : csrfToken
       }
    )
