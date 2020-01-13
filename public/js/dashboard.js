@@ -1,4 +1,6 @@
 $('.dashboard-icon i.fa-heart').on('click', function () {
+   $('.progress-bar').removeClass('d-none');
+
    philathropistsId = ($(this).attr('data-id'));
    csrfToken = $('input[name="_token"]').val();
 
@@ -10,7 +12,7 @@ $('.dashboard-icon i.fa-heart').on('click', function () {
    )
    .done(
       function(data) {
-         alert(data.message);
+         $('.progress-bar').addClass('d-none');
       }
    );
 });

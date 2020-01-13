@@ -34,7 +34,13 @@
 
                             @foreach($company->getActivePhilanthropists() as $philanthropist)
                                 <tr>
-                                    <th scope="row">{{ $philanthropist->id }}</th>
+                                    <td scope="row">
+                                        @if($philanthropist->donations()->exists() && !$philanthropist->hasNotThakedDonations())
+                                            <i class="fa fa-check"></i>
+                                        @else
+                                            {{ $philanthropist->id }}
+                                        @endif
+                                    </td>
                                     <td>{{ $philanthropist->first_name . ' ' . $philanthropist->last_name }}</td>
                                     <td>{{ $philanthropist->email }}</td>
                                     <td>
